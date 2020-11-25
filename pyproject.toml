@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "powerful_python"
+version = "0.1.0"
+description = "Code encountered while reading \"Powerful Python\" by Aaron Maxwell."
+authors = ["Kurt Klein <fuji.film.fan@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+mkdocs = "^1.1.2"
+mkdocs-material = "^6.1.5"
+markdown-include = "^0.6.0"
+mkdocs-material-extensions = "^1.0.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

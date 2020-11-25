@@ -1,0 +1,27 @@
+site_name: Powerful Python
+site_description: Notes from the book by Aaron Maxwell
+
+repo_name:
+repo_url:
+
+theme:
+    name: 'material'
+    palette:
+        primary: 'deep purple'
+        accent: 'light green'
+    logo: ''
+    favicon: ''
+
+nav:
+    - Generators: 'generators.md'
+
+markdown_extensions:
+    - admonition
+    - codehilite:
+        linenums: false
+    - markdown.extensions.codehilite:
+        guess_lang: false
+    - markdown_include.include:
+        base_path: docs
+    - toc:
+       permalink: true
