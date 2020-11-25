@@ -3,7 +3,6 @@ Other references:
 * [How to make an iterator in Python](https://treyhunner.com/2018/06/how-to-make-an-iterator-in-python/)
 
 ## Generator basics (2.1 and 2.2)
----
 Consider the following *generator function* used to produce squares:
 ```python
 def gen_squares(max_root):
@@ -60,7 +59,7 @@ When we don't assign the object to a variable and instead call `next` with the f
     The yield statement simultaneously defines an exit point and a re-entry point. 
 
 ## Comparing techniques to produce squares
----
+
 ### Methods
 The `generators.py` file implements three techniques for producing squares:
 
@@ -92,7 +91,6 @@ Here are the execution times for 100 roots:
 * gen: 0.24595169100000003 s
 
 ## Scalable composability (2.3)
----
 Consider the following two functions:
 ```python
 def matching_lines_from_file(path, pattern):
@@ -159,7 +157,6 @@ def  matching_lines_from_file(pattern, path):
 ```
 
 ## Other iterators in Python (2.4)
----
 
 ### Dictionaries
 Calling `.items()` on a dictionary returns a `dict_items` object, which Python calls a *view*. There is no base view 

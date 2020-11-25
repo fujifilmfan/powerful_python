@@ -1,9 +1,7 @@
 ## Project summary
----
 My notes, implementations, and experiments related to principles presented in *Powerful Python* by Aaron Maxwell.
 
 ## Project set up
----
 I'm using Poetry for package and venv management and pyenv for python version management.  
 * `$ poetry init`
 * `$ poetry install --no-root` installed Python 3.7.8 into `.venv`.
@@ -12,7 +10,6 @@ I'm using Poetry for package and venv management and pyenv for python version ma
 * `$ source .venv/bin/activate` (so I don't need to use `poetry run` before each python command)
 
 ## Documentation
-----
 The documentation can be viewed and navigated via web browser using MkDocs.  To start the server on MacOS:
 * navigate to the directory that hosts `mkdocs.yml`
 * activate a virtual environment (mine is called "docs")
