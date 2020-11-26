@@ -173,3 +173,41 @@ Dictionaries also have `.keys()` and `.values()` methods.
 ### Others
 The built-in `range`, `map`, `filter`, and `zip` all return iterators. See examples in book.
 
+## The Iterator protocol (2.5)
+
+### Iterators
+An object is an iterator (noun) if it follows the iterator protocol.  The iterator protocol:
+
+* defines the `__iter__` method, called without arguments, whose body is `return self`
+* defines the `__next__` method, called without arguments (but not directly - use the built-in `next()` function)
+* calling `__next__()` produces the next item in the sequence
+* when the sequence is exhausted, `__next__()` raises `StopIteration`
+
+Thus, an iterator can be passed to `next` without an error and returns itself when passed to `iter`. See 
+SquaresIterator in generators.py for an example. One can also say that an object follows the iterator protocol 
+correctly if it returns an iterator object, as in `def __iter__(self): return iter(self.items)`. Iterators are also 
+iterables.
+
+### Iterables
+An object is an iterable (adjective) "if it knows how to create an iterator over its contents, which you can 
+access with the built-in `iter()` function." An iterable:
+
+* defines an `__iter__` method that creates and returns an iterator; or
+* follows the sequence protocol, meaning it defines `__getitem__`, raising `IndexError` when the sequence is exhausted 
+
+Thus, iterables can be passed to `iter` without an error. See the UniqueList example in the book (page 35) for an 
+implementation of the latter.
+
+Square bracket access works because of `__getitem__`.  For instance, `my_list[3]` is essentially 
+`my_list.__getitem__(3)`. The definition of "sequence" from the Python 3 
+[Glossary¶](https://docs.python.org/3/glossary.html#term-sequence):
+
+> An iterable which supports efficient element access using integer indices via the `__getitem__()` special method and 
+> defines a `__len__()` method that returns the length of the sequence.
+
+* sequences: lists, strings, tuples
+* not sequences: dictionaries, sets, other iterables
+
+### Summary
+We can loop over an iterable by calling `iter(iterable)` to get an iterator and then ask the iterator for the next 
+item: `next(iterator)`.
